@@ -18,7 +18,7 @@ jobs:
         - name: "Displaying information"
           run: |
            echo "Application Version: v1.02"
-           echo "deployment url: ${steps.deploy.output.deployment_url}"
+           echo "deployment url: ${steps.deploy.outputs.deployment_url}"
 
 
 
