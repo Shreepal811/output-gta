@@ -1,0 +1,24 @@
+name: Steps Output Demo
+
+on:
+    workflow_dispatch
+
+jobs:
+    deploy-job:
+     runs-on: ubuntu-latest
+
+     steps:
+        - name: "deploying application"
+          id: deploy
+          run: |
+           echo "Deploying application..."
+           sleep 3
+           echo "deployment_url=http://myapplication.com" > $GITHUB_OUTPUT
+
+        - name: "Displaying information"
+          run: |
+           echo "Application Version: v1.02"
+           echo "deployment url: ${steps.deploy.output.deployment_url}"
+
+
+
